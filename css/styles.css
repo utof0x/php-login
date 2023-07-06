@@ -57,3 +57,8 @@
 .login-form input:first-of-type {
     margin-top: 12px;
 }
+
+.error-message {
+    margin-top: 32px;
+    color: red;
+}

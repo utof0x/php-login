@@ -6,7 +6,7 @@ class Connection
 
     public function __construct()
     {
-        $this->pdo = new PDO("mysql:host=127.0.0.1;port=3306;dbname=php_login", "root");
+        $this->pdo = new PDO("mysql:host=127.0.0.1;port=3306;dbname=sql_login", "root");
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
@@ -16,7 +16,7 @@ class Connection
         $statement->bindValue('username', $username);
         $statement->bindValue('email', $email);
         $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
     public function createUser(string $name, string $username, string $email, string $password): bool
