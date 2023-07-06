@@ -35,4 +35,6 @@ if (isset($_POST['submit'])) {
 
     $connection->createUser($name, $username, $email, $password);
     header('location: ../signup.php?error=none');
+} else {
+    header('location: ../signup.php');
 }
