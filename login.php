@@ -3,7 +3,7 @@
         <h1 class="login-form-title">Log In</h1>
         <form class="login-form" action="" method="post">
             <input type="text" name="username" placeholder="Username or email"/>
-            <input type="text" name="password" placeholder="Password"/>
+            <input type="password" name="password" placeholder="Password"/>
             <button type="submit" name="submit">Log In</button>
         </form>
     </div>
