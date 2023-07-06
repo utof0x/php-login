@@ -16,9 +16,18 @@ if (isset($_POST['submit'])) {
     if (!userAlreadyExist($connection, $username, $username)) {
         header('location: ../login.php?error=usernotfound');
         exit();
-    }
+    } else {
+        $user = $connection->getUserByUsernameOrEmail($username, $username);
+        if ($password === $user['password']) {
+            session_start();
+            $_SESSION['id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
 
-    header('location: ../login.php?error=none');
+            header('location: ../index.php');
+            exit();
+        }
+
+    }
 } else {
     header('location: ../login.php');
 }

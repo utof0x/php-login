@@ -13,7 +13,12 @@
 <div class="wrapper">
     <nav>
         <ul class="links-list">
-            <li class="item"><a href="login.php">Log In</a></li>
-            <li class="item"><a href="signup.php">Sign Up</a></li>
+            <?php if (isset($_SESSION['id'])): ?>
+                <li class="item"><a href="./includes/logout.inc.php">Log Out</a></li>
+            <?php else: ?>
+                <li class="item"><a href="./login.php">Log In</a></li>
+                <li class="item"><a href="./signup.php">Sign Up</a></li>
+            <?php endif; ?>
+
         </ul>
     </nav>
